@@ -109,7 +109,7 @@ void KMPOptimizedAlgorithm::KMPWrapper(const std::string &str, const std::string
     }
 
     // If value in counter array equals number of patterns than pattern is found at this position.
-    for (int i = 0; i < counters.size(); ++i) {
+    for (int i = 0; i < counters.size() - target.length() + 1; ++i) {
         if (counters[i] == positions.size()) {
             ans.push_back(i);
         }
